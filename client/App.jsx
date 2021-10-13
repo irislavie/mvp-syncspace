@@ -8,9 +8,9 @@ class App extends React.Component {
   }
 
   render() {
-    return(
-      <div>Hello!
-      <QuillEditor />
+    return (
+      <div>
+        <div><QuillEditor /></div>
       </div>
     );
   }
