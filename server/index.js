@@ -7,12 +7,15 @@ const io = require('socket.io')(3001, {
   methods: ['GET', 'POST']
 });
 
-app.use(express.static(__dirname + '/../public'));
+app.use(express.static(__dirname + '/../client/public'));
 
 app.listen(PORT, () => {
   console.log(`Listening to Port: ${PORT}!`);
 })
 
-io.on('connection', () => {
+io.on('connection', (socket) => {
   console.log('a user connected!');
+  socket.on('send', data => {
+    socket.broadcast.emit('receive', data);
+  })
 });

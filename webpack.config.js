@@ -1,4 +1,5 @@
 const path = require('path');
+var DIST_DIR = path.join(__dirname, '/client/public');
 
 module.exports = {
   watch: true,
@@ -6,7 +7,7 @@ module.exports = {
   entry: './client/index.jsx',
   mode: 'development',
   output: {
-    path: path.resolve(__dirname, 'public'),
+    path: DIST_DIR,
     filename: 'bundle.js',
   },
   module: {
@@ -30,9 +31,10 @@ module.exports = {
       {
         test: /\.css$/,
         exclude: [/stylesheets/, /node_modules/],
-        use: [
-          'css-loader?sourceMap&modules,localIdentName=[local]-[hash:base64]',
-        ],
+        loader: 'css-loader',
+        options: {
+          modules: {localIdentName:'[local]-[hash:base64]'}
+        },
       },
     ]
   }
