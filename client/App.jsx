@@ -7,40 +7,31 @@ import {
   Link
 } from "react-router-dom";
 import QuillEditor from './Editor.jsx';
-import Home from './Home.jsx';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faGlobeAmericas } from '@fortawesome/free-solid-svg-icons';
-import { faRocket } from '@fortawesome/free-solid-svg-icons';
+import Quotes from './Quote.jsx';
+import axios from 'axios';
 
 class App extends React.Component {
   constructor(props) {
     super(props);
+    this.state = {memes: []};
+  }
+
+  componentDidMount() {
+    axios.get('/quotes')
+      .then(response => {
+        this.setState({memes: response.data});
+      })
+      .catch(error => {
+        console.log('Err from Cli:', error);
+      })
   }
 
   render() {
     return (
-      <Router>
-        <div>
-          <nav>
-            <ul className="icon-container">
-              <Link to="/">
-                <FontAwesomeIcon  icon={faGlobeAmericas} size="3x" className="icon-home"></FontAwesomeIcon>
-              </Link>
-              <Link to="/SyncSpace">
-                <FontAwesomeIcon icon={faRocket} size="3x"></FontAwesomeIcon>
-              </Link>
-            </ul>
-          </nav>
-          <Switch>
-            <Route path="/SyncSpace">
-              <QuillEditor />
-            </Route>
-            <Route path="/">
-              <Home />
-            </Route>
-          </Switch>
-        </div>
-      </Router>
+      <div>
+        <Quotes lists={this.state.memes}/>
+        <QuillEditor />
+      </div>
     );
   }
 }

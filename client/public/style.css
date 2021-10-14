@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap');
 
 #root {
-  max-width: 1200px;
+  max-width: 1500px;
   margin: auto;
   padding: 0px 20px;
 }
@@ -9,9 +9,45 @@
 body {
   background: url(./coolBackground.png);
   background-size: cover;
-  font-family: open-sans;
+  font-family: sans-serif;
 }
 
+.sub {
+  display: flex;
+  width: 1455px;
+  align-items: center;
+  border: 3px solid #ccc;
+  margin-bottom: 40px;
+  padding: 20px;
+}
+
+.leftIcon {
+  margin-right: 35px;
+}
+
+.rightIcon {
+  margin-left: 35px;
+  margin-right: 35px;
+}
+
+.quotes {
+  font-family: sans-serif;
+  font-size: 20px;
+  font-weight: 300;
+  font-style: italic;
+}
+
+.author {
+  font-family: sans-serif;
+  font-size: 20px;
+  font-weight: 300;
+  margin-left: 10px;
+  font-style: italic;
+}
+
+.quill {
+  width: 1500px;
+}
 .icon-container {
   text-align: center;
 }
@@ -24,7 +60,6 @@ body {
   caret-color: darkgreen;
   padding: 1cm;
   margin: 1rem;
-  min-height: 29cm;
   background-color: whitesmoke;
   box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.5);
 }
@@ -37,7 +72,7 @@ body {
   border: 3px solid #ccc;
 }
 
-.form-container {
+/* .form-container {
   display: flex;
   justify-content: center;
   text-align: center;
@@ -89,5 +124,5 @@ body {
   width: 100%;
   padding: 18px 20px;
   box-sizing: border-box;
-}
+} */
 
