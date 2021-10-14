@@ -9,21 +9,21 @@ class Home extends React.Component {
   render() {
     return(
       <React.Fragment>
-        {/* <div className="session">
-          <div className="earth"></div>
-            <div className="circle">
-              <span style={{"--i": 1}} key="1">S</span>
-              <span style={{"--i": 2}} key="2">Y</span>
-              <span style={{"--i": 3}} key="3">N</span>
-              <span style={{"--i": 4}} key="4">C</span>
-              <span style={{"--i": 5}} key="5">-</span>
-              <span style={{"--i": 6}} key="6">S</span>
-              <span style={{"--i": 7}} key="7">P</span>
-              <span style={{"--i": 8}} key="8">A</span>
-              <span style={{"--i": 9}} key="9">C</span>
-              <span style={{"--i": 10}} key="10">E</span>
-          </div>
-        </div> */}
+        <div className="form-container">
+          <form className="form">
+            <p className="form-user">
+              Username:
+              <br />
+              <input type="text" name="userName" className="form-input-user"/>
+            </p>
+            <br />
+            <p className="form-password">
+              Password:
+              <br />
+              <input type="text" name="passWord" className="form-input"/>
+            </p>
+          </form>
+        </div>
       </React.Fragment>
     );
   }

@@ -8,6 +8,9 @@ import {
 } from "react-router-dom";
 import QuillEditor from './Editor.jsx';
 import Home from './Home.jsx';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faGlobeAmericas } from '@fortawesome/free-solid-svg-icons';
+import { faRocket } from '@fortawesome/free-solid-svg-icons';
 
 class App extends React.Component {
   constructor(props) {
@@ -19,17 +22,17 @@ class App extends React.Component {
       <Router>
         <div>
           <nav>
-            <ul>
-              <li>
-                <Link to="/">Home</Link>
-              </li>
-              <li>
-                <Link to="/outerSpace">Outer Space</Link>
-              </li>
+            <ul className="icon-container">
+              <Link to="/">
+                <FontAwesomeIcon  icon={faGlobeAmericas} size="3x" className="icon-home"></FontAwesomeIcon>
+              </Link>
+              <Link to="/SyncSpace">
+                <FontAwesomeIcon icon={faRocket} size="3x"></FontAwesomeIcon>
+              </Link>
             </ul>
           </nav>
           <Switch>
-            <Route path="/outerSpace">
+            <Route path="/SyncSpace">
               <QuillEditor />
             </Route>
             <Route path="/">

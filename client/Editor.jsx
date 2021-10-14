@@ -1,11 +1,13 @@
 import React, {useEffect, useState} from 'react';
-import ReactQuill, {Quill} from 'react-quill';
+import ReactQuill, { Quill } from 'react-quill';
 import 'react-quill/dist/quill.snow.css';
 import {io} from 'socket.io-client';
+import QuillCursors from 'quill-cursors';
 
 var QuillEditor = () => {
   const [value, setValue] = useState('');
   const [socket, setSocket] = useState(null);
+  const [cursor, setCursor] =useState(null);
 
   var modules = {
     toolbar: [
